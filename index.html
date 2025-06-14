@@ -1,145 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    
+    <title>Gautum V P - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <header>
-        <h1>Gautum's Portfolio </h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#research-paper">Publications</a>
-            <a href="#hobbies">Hobbies</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        
+            <nav class="navbar">
+                <div class="nav-logo">
+                    <a href="index.html">GVP</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="hobbies.html">Hobbies</a></li>
+                    <li><a href="timeline.html">Timeline</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="theme-switcher">
+                    <button id="theme-toggle">Toggle Theme</button>
+                </div>
+                <div class="menu-icon">
+                    &#9776; <!-- Hamburger icon -->
+                </div>
+            </nav>
     </header>
-
-    <div class="container">
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>I am a full stack developer with experience developing web applications using Springboot and Angular.
-                I am currently pursuing a degree in IT and Data Analytics at University of Technology Sydney.
-                I’m looking to collaborate on creating apps and other programming solutions, specially those that
-                involve human health.</p>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3><a href="https://github.com/gautumsvp7/heart-attack-prediction" target="_blank">Heart Attack
-                        Prediction</a></h3>
-                <p>I am currently working on this project to predict the probability of cardiac arrest.
-                    I'm dealing with certain issues with the dataset, however, I was able to learn some fundamental topics such as ETL pipeline.
-                    Other tools/skills used :  PostgreSQL, Python, numpy, matplotlib, SparkPlus
-                </p>
-            </div>
-        </section>
-
-        <section id="research-paper" class="section">
-            <h2>Publications</h2>
-            <div class="research-paper">
-                <h3><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119847564.ch5" target="_blank">IoT and
-                        Machine learning based energy efficient smart buildings</a></h3>
-                <u1>
-                    <li>Automated Energy Control: Uses computer vision to detect human presence and automatically
-                        control the power supply to appliances.</li>
-                    <li>Energy Efficiency: Reduces energy wastage by ensuring devices like lights and TVs are turned off
-                        when not in use or when users move away.</li>
-                    <li>Cost-Effective: Significant savings on energy bills in the long run by minimizing unnecessary
-                        power consumption.</li>
-                    <li>Flexible Usage: Suitable for various settings, including homes and offices, with adaptable
-                        configurations for different appliance types.</li>
-                    <li>Enhanced Security: Sends alerts to users when someone enters a room after a specified time,
-                        providing an additional layer of security.</li>
-                    <li>Privacy Protection: Monitors in real-time without storing any data, ensuring the user’s privacy
-                        is preserved.</li>
-                    <li>Sleep Mode Detection: Automatically turns off appliances like TVs when users fall asleep,
-                        enhancing convenience.</li>
-                    <li>User-Friendly: Designed for seamless integration with existing appliances and easy customization
-                        for specific needs.</li>
-                </u1>
-
-
-            </div>
-            <div class="research-paper">
-                <h3><a href="https://link.springer.com/chapter/10.1007/978-981-19-3015-7_27" target="_blank">Fake news
-                        detection system using Machine Learning</a></h3>
-                <ul>
-                    <li>Highlights the challenge of fake news classification in the age of media and mass communication.
-                    </li>
-                    <li>Addresses the issue of falsified information reaching platforms with large audiences, such as
-                        news and radio channels.</li>
-                    <li>Proposes a simple method to flag certain news pieces as likely fake for further investigation.
-                    </li>
-                    <li>Focuses on news data surrounding the US 2020 elections.</li>
-                    <li>Utilizes a Natural Language Processing (NLP) framework called BERT to extract contextual
-                        features from raw text data.</li>
-                    <li>Classifies news as fake or real based on the headline and supporting text provided as input.
-                    </li>
-                    <li>Demonstrates the effectiveness of the model through experimental results.</li>
-                    <li>Published in Springer’s "Computational Methods and Data Engineering."</li>
-                </ul>
-            </div>
-            <div class="research-paper">
-                <h3><a href="https://link.springer.com/chapter/10.1007/978-981-99-0609-3_5" target="_blank">Solar power
-                        forecasting to predict duck curve</a></h3>
-                <ul>
-                    <li>Solar power is recognized as a key component of a green future, but excessive solar energy
-                        generation needs proper balancing to prevent damage to existing power sources.</li>
-                    <li>Worked on the concept of the "duck curve," which represents the power required from non-solar
-                        sources during peak solar power generation.</li>
-                    <li>Focuses on the calculation of the duck curve by predicting solar power generation using machine
-                        learning techniques.</li>
-                    <li>Utilizes weather data parameters such as temperature, humidity, and wind temperature to predict
-                        solar output.</li>
-                    <li>Enables efficient allocation of power demand to non-solar sources based on solar power
-                        generation trends.</li>
-                    <li>Analyzes the typical pattern of solar power peaking during the daytime, followed by a sharp drop
-                        in non-solar demand and a steady increase as the sun sets.</li>
-                    <li>Provides insights into adjusting non-solar sources for efficient power generation based on the
-                        duck curve.</li>
-                    <li>Uses data from NSRDB to predict hourly Global Horizontal Irradiance (GHI) for VIT Chennai and
-                        corroborates findings with official sources.</li>
-                    <li>Plots the duck curve for VIT Chennai and extends the model to observe GHI patterns in other
-                        locations across India.</li>
-                </ul>
-            </div>
-
-        </section>
-
-        <section id="hobbies" class="section">
-            <h2>Hobbies</h2>
-            <ul>
-                <li>📸 Photography: Capturing landscapes and moments.</li>
-                <li>🏃 Running: Achieving new personal bests.</li>
-                <li>📚 Reading: Exploring science fiction and self-discovery genres.</li>
-                <li>🌍 Bird-spotting: Connecting with nature and identifying bird species.</li>
-            </ul>
-        </section>
-        
-
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me through my GitHub profile or send me an email!</p>
-            <ul>
-                <li><strong>GitHub:</strong> <a href="https://github.com/gautumsvp7"
-                        target="_blank">github.com/gautumsvp7</a></li>
-                <li><strong>Email:</strong> <a href="mailto:gautumsvp@gmail.com">gautumsvp@gmail.com</a></li>
-            </ul>
-        </section>
-    </div>
-
+    <main class="landing-page">
+        <div class="landing-content fade-in-scroll">
+            <h1>Gautum V P</h1>
+            <p class="tagline">Engineer. Creator. Explorer.</p>
+            <a href="about.html" class="cta-button">Explore Portfolio</a>
+        </div>
+    </main>
     <footer>
-        <p>&copy; 2025 Gautum. Built with love and creativity.</p>
+        <div class="footer-content">
+            <p>© 2025 Gautum. Built with love and creativity.</p>
+        </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
-
 </html>

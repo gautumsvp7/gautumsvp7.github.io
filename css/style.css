@@ -1,0 +1,740 @@
+/* Basic Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.5s ease-out; /* Added opacity transition */
+    opacity: 0; /* Start fully transparent */
+    animation: fadeInPage 0.5s ease-out forwards;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+
+/* Theme Variables */
+:root {
+    --background-light: #ffffff;
+    --text-light: #1a1a1a; /* Darker black for better readability */
+    --primary-light: #007bff; /* A subtle primary color for links/buttons if needed */
+    --navbar-bg-light: #f8f9fa;
+    --navbar-text-light: #343a40;
+    --card-bg-light: #ffffff;
+    --border-color-light: #dee2e6;
+
+    --background-dark: #1a1a1a; /* Dark gray instead of pure black */
+    --text-dark: #f0f0f0; /* Lighter gray for text */
+    --primary-dark: #007bff; /* Keep primary or adjust if needed */
+    --navbar-bg-dark: #2c2c2c; /* Darker navbar */
+    --navbar-text-dark: #f0f0f0;
+    --card-bg-dark: #252525; /* Slightly lighter than body background */
+    --border-color-dark: #444444;
+
+    /* Page content background variables for timeline dot border */
+    --page-content-bg: #f8f9fa;
+    --page-content-bg-dark: #252525;
+}
+
+/* Light Theme (Default) */
+body {
+    color: var(--text-light);
+}
+
+.navbar {
+    background-color: var(--navbar-bg-light);
+    color: var(--navbar-text-light);
+}
+
+/* Dark Theme */
+body.dark-mode {
+    color: var(--text-dark);
+}
+
+body.dark-mode .navbar {
+    background-color: var(--navbar-bg-dark);
+    color: var(--navbar-text-dark);
+}
+body.dark-mode .nav-links a {
+    color: var(--navbar-text-dark);
+}
+body.dark-mode .nav-links a:hover {
+    color: var(--primary-dark);
+}
+body.dark-mode .nav-logo a {
+    color: var(--navbar-text-dark);
+}
+ body.dark-mode .theme-switcher button {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color-dark);
+}
+body.dark-mode .theme-switcher button:hover {
+    background-color: var(--text-dark);
+    color: var(--primary-dark);
+}
+
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-logo a {
+    color: var(--navbar-text-light);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--navbar-text-light);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-light);
+}
+
+.theme-switcher button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-light);
+    color: var(--background-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-switcher button:hover {
+    background-color: var(--text-light);
+    color: var(--primary-light);
+}
+
+
+.menu-icon {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: var(--navbar-bg-light);
+        padding: 1rem 0;
+    }
+
+    body.dark-mode .nav-links {
+         background-color: var(--navbar-bg-dark);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger icon */
+    }
+}
+
+/* Page Load Fade-in Transition */
+/* body animation is now directly on the body selector */
+@keyframes fadeInPage {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scroll-triggered Fade-in Animation */
+/* Class to apply to elements that should fade in on scroll */
+.fade-in-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: slight upward movement */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+main {
+    padding: 2rem;
+    flex-grow: 1; /* Allows main content to take up available space, pushing footer down */
+}
+
+/* Landing Page Styles */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Full viewport height minus navbar height (adjust if navbar height changes) */
+    text-align: center;
+    padding: 2rem; /* Add some padding */
+    position: relative; /* For pseudo-element background */
+    overflow: hidden; /* Hide scrollbars if gradient overflows slightly */
+}
+
+/* Optional: Subtle Animated Gradient Background */
+body { /* Apply to body to ensure it's behind everything */
+    /* ... existing body styles ... */
+    background: linear-gradient(45deg, #e3e3e3, #f5f5f5, #e3e3e3, #f5f5f5); /* Light mode gradient */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+body.dark-mode {
+    /* ... existing dark-mode body styles ... */
+    background: linear-gradient(45deg, #1c1c1c, #2d2d2d, #1c1c1c, #2d2d2d); /* Dark mode gradient */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.landing-content h1 {
+    font-size: 3rem; /* Responsive font size can be added via media queries */
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-light); /* Ensure tagline uses theme color */
+}
+body.dark-mode .tagline {
+    color: var(--text-dark);
+}
+
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-light);
+    color: var(--background-light); /* Text color for light mode button */
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+    transform: translateY(-2px);
+}
+
+body.dark-mode .cta-button {
+    background-color: var(--primary-dark);
+    color: var(--text-dark); /* Text color for dark mode button - ensure contrast */
+}
+body.dark-mode .cta-button:hover {
+    background-color: #0056b3; /* Consistent hover, or adjust for dark theme */
+}
+
+
+/* Responsive adjustments for landing page */
+@media (max-width: 768px) {
+    .landing-content h1 {
+        font-size: 2.5rem;
+    }
+    .tagline {
+        font-size: 1.2rem;
+    }
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .landing-page {
+         min-height: calc(100vh - 58px); /* Adjust if mobile navbar height is different */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--navbar-bg-light); /* Use navbar background for consistency */
+    color: var(--navbar-text-light); /* Use navbar text color */
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color-light);
+    margin-top: auto; /* Pushes footer to the bottom if content is short */
+}
+
+body.dark-mode footer {
+    background-color: var(--navbar-bg-dark);
+    color: var(--navbar-text-dark);
+    border-top-color: var(--border-color-dark);
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* General Page Content Styles */
+.page-content {
+    max-width: 900px; /* Max width for content readability */
+    margin: 2rem auto; /* Center content on the page */
+    padding: 2rem;
+    background-color: #f8f9fa; /* Slightly off-white for light mode page content bg */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .page-content {
+    background-color: var(--card-bg-dark);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Darker shadow for dark mode */
+}
+
+.page-content h2 { /* Styling for section titles like "About Me" */
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color-light);
+    color: var(--text-light);
+}
+
+body.dark-mode .page-content h2 {
+    border-bottom-color: var(--border-color-dark);
+    color: var(--text-dark);
+}
+
+/* Space between sections within .page-content */
+.page-content section:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+/* About Page Specific Styles */
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments for page content */
+@media (max-width: 768px) {
+    .page-content {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .page-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Projects Page Specific Styles */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background-color: #ffffff; /* Always white in light mode */
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark-mode .project-card {
+    background-color: #2c2c2c; /* A specific dark shade for cards in dark mode */
+    border-color: var(--border-color-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+body.dark-mode .project-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-light);
+}
+body.dark-mode .project-card h3 {
+    color: var(--primary-dark);
+}
+
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.project-skills {
+    margin-bottom: 1rem;
+}
+
+.project-skills span {
+    display: inline-block;
+    background-color: #e9ecef; /* Light gray for skill tags */
+    color: #495057;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .project-skills span {
+    background-color: #3a3a3a; /* Darker gray for skill tags in dark mode */
+    color: #ced4da;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--primary-light);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    align-self: flex-start; /* Align link to the start of the flex container */
+}
+
+.project-link:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+body.dark-mode .project-link {
+    color: var(--primary-dark);
+}
+body.dark-mode .project-link:hover {
+    color: #3ea6ff; /* Lighter shade for dark mode hover if needed */
+}
+
+/* Publications Page Specific Styles */
+.publications-list {
+    display: grid; /* Can use grid or just flow vertically */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.publication-item {
+    background-color: #ffffff; /* Consistent with project cards in light mode */
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    /* No transform on hover for publications, but keep other card styles if desired */
+}
+
+body.dark-mode .publication-item {
+    background-color: #2c2c2c; /* Consistent with project cards in dark mode */
+    border-color: var(--border-color-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.publication-item h3 {
+    font-size: 1.5rem; /* Same as project card title */
+    margin-bottom: 0.75rem;
+    color: var(--primary-light);
+}
+body.dark-mode .publication-item h3 {
+    color: var(--primary-dark);
+}
+
+.publication-highlights {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.publication-highlights ul {
+    list-style-position: inside; /* Keeps bullets aligned with text */
+    padding-left: 0; /* Remove default padding if list-style-position is inside */
+}
+
+.publication-highlights ul li {
+    margin-bottom: 0.5rem;
+}
+
+.publication-link { /* Style like project-link for consistency */
+    text-decoration: none;
+    color: var(--primary-light);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: inline-block; /* Ensures it doesn't take full width if not needed */
+}
+
+.publication-link:hover {
+    color: #0056b3;
+}
+
+body.dark-mode .publication-link {
+    color: var(--primary-dark);
+}
+body.dark-mode .publication-link:hover {
+    color: #3ea6ff;
+}
+
+/* Hobbies Page Specific Styles */
+.hobbies-list {
+    list-style: none; /* Remove default list bullets if emojis are primary indicators */
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.hobbies-list li {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Increased line-height for better readability with emojis */
+    margin-bottom: 0.75rem;
+    display: flex; /* Align emoji and text nicely */
+    align-items: center; /* Vertically align emoji with text */
+}
+
+/* Optional: If you want to style the emoji itself, you could wrap it in a span, */
+/* but usually, emojis inherit text styles well. */
+/* For example, if emoji size needs adjustment: */
+/* .hobbies-list li .emoji { font-size: 1.5rem; margin-right: 0.5rem; } */
+/* Then in HTML: <li><span class="emoji">📸</span> Photography...</li> */
+/* For now, let's assume direct emoji usage is fine. */
+
+/* Responsive adjustments for hobbies list */
+@media (max-width: 768px) {
+    .hobbies-list li {
+        font-size: 1rem;
+    }
+}
+
+/* Contact Page Specific Styles */
+.contact-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem; /* More space before the links */
+}
+
+.contact-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-links li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-links li strong {
+    margin-right: 0.5rem;
+}
+
+.contact-links a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #0056b3; /* Darker shade on hover */
+    text-decoration: underline;
+}
+
+body.dark-mode .contact-links a {
+    color: var(--primary-dark);
+}
+
+body.dark-mode .contact-links a:hover {
+    color: #3ea6ff; /* Lighter shade for dark mode hover */
+}
+
+/* Responsive adjustments for contact page */
+@media (max-width: 768px) {
+    .contact-content p {
+        font-size: 1rem;
+    }
+    .contact-links li {
+        font-size: 1rem;
+    }
+}
+
+/* Skills Section Styles (in about.html or as a general component) */
+#skills { /* Assuming it's an ID on a section element */
+    margin-top: 2.5rem; /* Space above the skills section */
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow tags to wrap to the next line */
+    gap: 0.75rem; /* Space between tags */
+    margin-top: 1rem; /* Space below the "Tech Skills" title */
+}
+
+.skill-tag {
+    display: inline-block;
+    background-color: #e9ecef; /* Light gray, same as project skill tags */
+    color: #495057; /* Dark text for light tags */
+    padding: 0.5rem 1rem; /* Slightly larger padding than project skills for prominence */
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500; /* Slightly bolder */
+    border: 1px solid transparent; /* For potential hover/focus effects */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .skill-tag {
+    background-color: #3a3a3a; /* Darker gray for dark mode tags */
+    color: #ced4da; /* Light text for dark tags */
+}
+
+.skill-tag:hover {
+    background-color: #d1d5db; /* Slightly darker on hover for light mode */
+    border-color: #adb5bd;
+}
+
+body.dark-mode .skill-tag:hover {
+    background-color: #4a4a4a; /* Slightly lighter on hover for dark mode */
+    border-color: #5a5a5a;
+}
+
+/* Timeline Page Specific Styles */
+#timeline { /* ID for the section */
+    margin-bottom: 2rem; /* Space at the bottom of the timeline section */
+}
+
+.timeline-container {
+    position: relative;
+    margin-top: 1rem;
+    padding-left: 10px; /* Minimal padding for the container itself */
+}
+
+/* The vertical timeline line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 10px; /* Line starts 10px from the left of container */
+    top: 5px; /* Start line slightly lower to align with first dot's center */
+    bottom: 5px; /* End line slightly higher */
+    width: 3px; /* Thickness of the line */
+    background-color: var(--border-color-light);
+    border-radius: 2px;
+}
+
+body.dark-mode .timeline-container::before {
+    background-color: var(--border-color-dark);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem; /* Space between timeline items */
+    padding-left: 35px; /* Content starts 35px from left of container (10px line + 15px space + content) */
+}
+
+/* The dot on the timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -31.5px; /* Adjusted for alignment: (Container padding + Item padding + X = 13.5px) => X = 13.5 - 10 - 35 = -31.5px */
+    top: 5px; /* Align with text or date */
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-light);
+    border: 2px solid var(--page-content-bg); /* Use page-content-bg for dot border */
+    border-radius: 50%;
+    z-index: 1; /* Above the timeline line */
+}
+
+body.dark-mode .timeline-item::before {
+    background-color: var(--primary-dark);
+    border-color: var(--page-content-bg-dark); /* Use page-content-bg for dot border in dark mode */
+}
+
+.timeline-date {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-light);
+    margin-bottom: 0.25rem;
+}
+body.dark-mode .timeline-date {
+    color: var(--primary-dark);
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600; /* Make title a bit bolder */
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0; /* No margin if it's the last element in content */
+}
+
+/* Responsive adjustments for timeline */
+@media (max-width: 768px) {
+    .timeline-container {
+        padding-left: 5px; /* Reduce padding on mobile */
+    }
+    .timeline-container::before { /* Line */
+        left: 5px;
+    }
+    .timeline-item {
+        padding-left: 30px; /* Adjust content padding */
+        margin-bottom: 1.5rem;
+    }
+    .timeline-item::before { /* Dot */
+        left: -36.5px; /* Adjusted for alignment: (Container padding + Item padding + X = -1.5px) => X = -1.5 - 5 - 30 = -36.5px */
+        border-color: var(--page-content-bg);
+    }
+    body.dark-mode .timeline-item::before {
+        border-color: var(--page-content-bg-dark);
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    .timeline-content p {
+        font-size: 0.9rem;
+    }
+}
