@@ -738,3 +738,13 @@ body.dark-mode .timeline-date {
         font-size: 0.9rem;
     }
 }
+
+/* Profile Image Styles */
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px; /* Centers block element, 20px bottom margin */
+    object-fit: cover; /* Ensures image covers the area well if not perfectly square */
+}
