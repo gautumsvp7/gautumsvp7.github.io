@@ -9,8 +9,8 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease; /* Added opacity transition */
-    opacity: 0; /* Start fully transparent */
-    animation: fadeInPage 0.5s ease-out forwards;
+    /* opacity: 0; */ /* Start fully transparent */
+    /* animation: fadeInPage 0.5s ease-out forwards; */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure body takes at least full viewport height */
@@ -179,13 +179,13 @@ body.dark-mode .theme-switcher button:hover {
 /* Scroll-triggered Fade-in Animation */
 /* Class to apply to elements that should fade in on scroll */
 .fade-in-scroll {
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateY(20px); /* Optional: slight upward movement */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* transition: opacity 0.6s ease-out, transform 0.6s ease-out; */
 }
 
 .fade-in-scroll.visible {
-    opacity: 1;
+    /* opacity: 1; */
     transform: translateY(0);
 }
 
