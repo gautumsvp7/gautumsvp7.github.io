@@ -8,7 +8,7 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease, opacity 0.5s ease-out; /* Added opacity transition */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added opacity transition */
     opacity: 0; /* Start fully transparent */
     animation: fadeInPage 0.5s ease-out forwards;
     display: flex;
