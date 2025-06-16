@@ -203,8 +203,23 @@ main {
     min-height: calc(100vh - 60px); /* Full viewport height minus navbar height (adjust if navbar height changes) */
     text-align: center;
     padding: 2rem; /* Add some padding */
-    position: relative; /* For pseudo-element background */
+    position: relative; /* For overlay positioning */
     overflow: hidden; /* Hide scrollbars if gradient overflows slightly */
+    background-image: url('../assets/banner-placeholder.jpg'); /* User to replace */
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Banner Overlay */
+.landing-page::before {
+    content: ''; /* Important for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay, adjust opacity as needed */
+    z-index: 1; /* Below landing-content */
 }
 
 /* Optional: Subtle Animated Gradient Background */
@@ -228,6 +243,11 @@ body.dark-mode {
     100% { background-position: 0% 50%; }
 }
 
+/* Ensure landing content is above banner overlay */
+.landing-content {
+    position: relative; /* To ensure z-index works */
+    z-index: 2; /* Above overlay */
+}
 
 .landing-content h1 {
     font-size: 3rem; /* Responsive font size can be added via media queries */

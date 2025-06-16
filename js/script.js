@@ -18,6 +18,19 @@ fadeInElements.forEach(element => {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
+const themeIconPlaceholder = document.getElementById('theme-icon-placeholder');
+const sunIcon = '☀️';
+const moonIcon = '🌙';
+
+function updateThemeIcon() {
+  if (!themeIconPlaceholder) return;
+  if (body.classList.contains('dark-mode')) {
+    themeIconPlaceholder.innerHTML = sunIcon; /* Show sun icon, clicking switches to light */
+  } else {
+    themeIconPlaceholder.innerHTML = moonIcon; /* Show moon icon, clicking switches to dark */
+  }
+}
+
 // Check for saved theme preference or use system preference
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 const currentTheme = localStorage.getItem("theme");
@@ -29,7 +42,7 @@ if (currentTheme === "dark") {
 } else if (prefersDarkScheme.matches) {
     body.classList.add("dark-mode");
 }
-
+updateThemeIcon(); // Set initial icon
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
@@ -38,6 +51,7 @@ themeToggle.addEventListener('click', () => {
         theme = "dark";
     }
     localStorage.setItem("theme", theme);
+    updateThemeIcon();
 });
 
 // Responsive Navbar - Hamburger Menu
