@@ -205,7 +205,7 @@ main {
     padding: 2rem; /* Add some padding */
     position: relative; /* For overlay positioning */
     overflow: hidden; /* Hide scrollbars if gradient overflows slightly */
-    background-image: url('../assets/banner-placeholder.jpg'); /* User to replace */
+    background-image: url('../assets/banner-placeholder.jpg'); 
     background-size: cover;
     background-position: center center;
 }
