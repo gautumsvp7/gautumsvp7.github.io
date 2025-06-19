@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
@@ -32,19 +34,60 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-grid">
-                    <div class="project-card fade-in-scroll">
+                <div class="project-card fade-in-scroll">
                     <h3>Heart Attack Prediction</h3>
-                    <p class="project-description">A project to predict cardiac arrest probability. Currently working through dataset challenges while learning ETL pipelines.</p>
+                    <p class="project-description">
+                    <p>• Developed a machine learning model to predict cardiovascular disease risk using patient data
+                        (blood pressure, cholesterol, glucose, BMI, lifestyle factors).
+                    <p>• Applied preprocessing, feature engineering, and trained multiple classifiers (Random Forest,
+                        KNN, Decision Tree, MLP, Stacking). </p>
+                    <p>• Achieved 73% accuracy and 0.79 AUC-ROC with Random Forest. </p>
+                    <p>• Used cross-validation and grid search for hyperparameter tuning. </p>
+                    <p>• Generated feature importance insights and deployed the final model for test predictions.</p>
+                    </p>
+                    </p>
                     <div class="project-skills">
                         <span>PostgreSQL</span>
                         <span>Python</span>
                         <span>NumPy</span>
                         <span>Matplotlib</span>
                         <span>SparkPlus</span>
+                        <span>Supervised Learning</span>
                     </div>
-                    <a href="https://github.com/gautumsvp7/HeartAttackPrediction" class="project-link" target="_blank">View on GitHub &rarr;</a>
+                    <a href="https://github.com/gautumsvp7/heart-attack-prediction/tree/main" class="project-link"
+                        target="_blank">View on GitHub &rarr;</a>
                 </div>
                 <!-- Add more project cards here if needed -->
+
+                <div class="project-card fade-in-scroll">
+                    <h3>Asteroid Hazard Prediction</h3>
+                    <p class="project-description">
+                    <p>• Built a machine learning pipeline to classify asteroid threats using NASA’s near-Earth object
+                        data (diameter, velocity, distance).
+                    <p>• Performed EDA, feature engineering (risk score), and applied MinMaxScaler and SMOTE to address
+                        class imbalance. </p>
+                    <p>• Trained a logistic regression model with threshold tuning, achieving 0.94 accuracy and 0.96 ROC
+                        AUC </p>
+                    <p>• Evaluated model performance with confusion matrix, classification report, and ROC/PR curves.
+                        Exported the model using joblib and integrated it into a web application with the help of AI
+                        tools (Gemini, Jules).
+                    </p>
+
+                    </p>
+                    </p>
+                    <div class="project-skills">
+                        <span>Python</span>
+                        <span>Threshold tuning</span>
+                        <span>Supervised learning</span>
+                        <span>API consumption</span>
+                        <span>Exploratory Data Analysis</span>
+                        <span>Class Imbalance Handling</span>
+                        <span>Jules (LLM tool for rapid web app prototyping)</span>
+                    </div>
+                    <a href="https://github.com/gautumsvp7/heart-attack-prediction/tree/main" class="project-link"
+                        target="_blank">View on GitHub &rarr;</a>
+                </div>
+
             </div>
         </section>
     </main>
@@ -55,4 +98,5 @@
     </footer>
     <script src="js/script.js"></script>
 </body>
+
 </html>
