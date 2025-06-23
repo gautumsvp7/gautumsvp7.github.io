@@ -1,0 +1,2 @@
+Fix images everywhere
+Fix publications page
