@@ -1,2 +1,1 @@
-Fix images everywhere
-Fix publications page
+Create images in publications
