@@ -1,231 +1,343 @@
-<html>
-
+<!DOCTYPE html>
+<html class="light" lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
-    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" />
-
-  <title>Gautum Vaisiam Parambil</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gautum Vaisiam Parambil | Portfolio</title>
+<link rel="stylesheet" href="css/glossy.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&family=Hanken+Grotesk:wght@300;400;500&family=Geist:wght@300;400;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        surface: "#f8f9fa",
+        background: "#f8f9fa",
+        primary: "#00696f",
+        secondary: "#0041c9",
+        "secondary-container": "#00f1fd",
+        "on-surface": "#191c1d",
+        "on-surface-variant": "#3a494b",
+        outline: "#6a7a7b",
+        "outline-variant": "#b9cacb",
+        "surface-container": "#edeeef",
+        "surface-container-high": "#e7e8e9",
+        "surface-container-highest": "#e1e3e4",
+        "surface-container-low": "#f3f4f5",
+        "surface-container-lowest": "#ffffff",
+      },
+      spacing: {
+        "stack-unit": "8px",
+        "container-max": "1280px",
+        "margin-mobile": "24px",
+        "margin-desktop": "80px",
+        gutter: "32px",
+      },
+      fontFamily: {
+        "section-label": ["Geist"],
+        "label-md": ["Geist"],
+        "body-lg": ["Hanken Grotesk"],
+        "body-md": ["Hanken Grotesk"],
+        "headline-lg": ["Sora"],
+        "display-lg": ["Sora"],
+        "headline-lg-mobile": ["Sora"],
+      },
+      fontSize: {
+        "section-label": ["14px", { lineHeight: "20px", letterSpacing: "0.2em", fontWeight: "600" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "headline-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+      },
+    },
+  },
+};
+</script>
 </head>
+<body class="bg-surface selection:bg-secondary/10">
+<div class="noise-overlay"></div>
+<div class="cursor-glow"></div>
 
-<body>
-  <div class="relative flex size-full min-h-screen flex-col bg-neutral-50 group/design-root overflow-x-hidden"
-    style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-    <div class="layout-container flex h-full grow flex-col">
-      <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ededed] px-10 py-3">
-        <div class="flex items-center gap-4 text-[#141414]">
-          <div class="size-4">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
-                fill="currentColor"></path>
-            </svg>
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_4px_30px_rgba(0,105,111,0.05)]">
+  <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter text-on-surface">Gautum's Portfolio</span>
+    <div class="hidden md:flex gap-10">
+      <a class="font-label-md text-label-md tracking-widest uppercase text-secondary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full after:shadow-[0_0_8px_rgba(0,65,201,0.4)]" href="index.html">About Me</a>
+      <a class="font-label-md text-label-md tracking-widest uppercase text-outline hover:text-on-surface transition-colors" href="projects.html">Projects</a>
+      <a class="font-label-md text-label-md tracking-widest uppercase text-outline hover:text-on-surface transition-colors" href="newPublications.html">Publications</a>
+      <a class="font-label-md text-label-md tracking-widest uppercase text-outline hover:text-on-surface transition-colors" href="newContact.html">Contact</a>
+    </div>
+    <div class="flex gap-2">
+      <a href="https://github.com/gautumsvp7" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 rounded-full glass-card text-on-surface hover:text-secondary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 rounded-full glass-card text-on-surface hover:text-secondary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-24">
+
+  <!-- Hero -->
+  <section class="flex flex-col md:flex-row items-center gap-12">
+    <div class="relative group">
+      <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-secondary/40 via-primary/20 to-secondary/40 opacity-75 blur-sm group-hover:opacity-100 transition duration-500"></div>
+      <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-2 border-primary/20 overflow-hidden bg-surface-container">
+        <img class="w-full h-full object-cover" src="assets/profile.jpg" alt="Gautum Vaisiam Parambil"/>
+      </div>
+    </div>
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <h1 class="font-display-lg text-4xl md:text-display-lg chrome-text tracking-tighter leading-none">ARCHITECTING THE FUTURE.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        Master's student in IT &amp; Data Analytics at UTS with a strong foundation in data-driven problem-solving and full-stack development. Experienced analyzing and interpreting complex datasets with SQL and Python, and building web applications that integrate frontend and backend systems &mdash; currently deepening my expertise in data analytics and generative AI.
+      </p>
+      <div class="flex justify-center md:justify-start gap-4 flex-wrap">
+        <span class="flex items-center gap-2 px-4 py-1.5 glass-card rounded-full font-label-md text-label-md text-secondary font-semibold">
+          <span class="material-symbols-outlined text-sm">location_on</span> SYDNEY, AU
+        </span>
+        <span class="flex items-center gap-2 px-4 py-1.5 glass-card rounded-full font-label-md text-label-md text-outline">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span> FULL STACK ENGINEER
+        </span>
+        <a href="projects.html" class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-on-surface text-surface font-label-md text-label-md hover:bg-secondary transition-all active:scale-95">
+          VIEW PROJECTS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Work -->
+  <section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+    <div class="lg:col-span-5 space-y-8">
+      <div class="space-y-2">
+        <span class="font-section-label text-section-label text-primary uppercase">Chronology</span>
+        <h2 class="font-headline-lg text-3xl text-on-surface">Education</h2>
+      </div>
+      <div class="relative pl-8 space-y-12">
+        <div class="absolute left-0 top-2 bottom-2 w-[1px] timeline-line"></div>
+        <div class="relative">
+          <div class="absolute -left-[35px] top-1.5 w-3.5 h-3.5 rounded-full border border-primary bg-surface flex items-center justify-center">
+            <div class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(0,105,111,0.4)]"></div>
           </div>
-          <h2 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em]">Gautum's Portfolio</h2>
+          <div class="space-y-1">
+            <span class="font-label-md text-label-md text-primary font-semibold">Jun 2024 &mdash; Jun 2026</span>
+            <h3 class="font-headline-lg text-xl text-on-surface">Master of IT &ndash; Data Analytics</h3>
+            <p class="font-body-md text-outline">University of Technology Sydney (UTS) &middot; GPA 6.75/7</p>
+            <p class="font-body-md text-outline">Dean's List 2026, Faculty of Engineering &amp; Information Technology (FEIT) &mdash; awarded for outstanding academic achievement</p>
+          </div>
         </div>
-        <div class="flex flex-1 justify-end gap-8">
-          <div class="flex items-center gap-9">
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="index.html">About Me</a>
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="projects.html">Projects</a>
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="newPublications.html">Publications</a>
-            <!-- <a class="text-[#141414] text-sm font-medium leading-normal" href="#">My Journey</a> -->
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="newContact.html">Contact</a>
-          </div>
-          <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-            style='background-image: url("assets/profile.jpg");'>
-          </div>
-        </div>
-      </header>
-      <div class="px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <div class="@container">
-            <div class="flex flex-col gap-6 px-4 py-10 @[480px]:gap-8 @[864px]:flex-row">
-              <div
-                class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl @[480px]:h-auto @[480px]:min-w-[400px] @[864px]:w-full"
-                style='background-image: url("assets/table.jpeg");'>
-              </div>
-              <div class="flex flex-col gap-6 @[480px]:min-w-[400px] @[480px]:gap-8 @[864px]:justify-center">
-                <div class="flex flex-col gap-2 text-left">
-                  <h1
-                    class="text-[#141414] text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                    Gautum Vaisiam Parambil
-                  </h1>
-                  <h2
-                    class="text-[#141414] text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                    Welcome to my portfolio. Explore my projects, skills, and experience in the field of data analysis
-                    and machine learning.
-                  </h2>
-                </div>
-                <button onclick="window.location.href='projects.html';"
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-black text-neutral-50 text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-                  <span class="truncate">View Projects</span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me
-          </h2>
-          <p class="text-[#141414] text-base font-normal leading-normal pb-3 pt-1 px-4">
-          <p>I am a full stack developer with experience in Spring Boot and Angular.</p>
-          <p>I am currently pursuing a degree in IT and Data Analytics at the University of Technology Sydney.</p>
-          <p>I’m looking to collaborate on apps and programming solutions, especially those that involve human health.
-          </p>
-          </p>
-          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Projects
-          </h2>
-          <div
-            class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-            <div class="flex items-stretch p-4 gap-3">
-              <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                  style='background-image: url("assets/heart.jpeg");'>
-                </div>
-                <div>
-                  <p class="text-[#141414] text-base font-medium leading-normal">Cardiovascular health prediction</p>
-                  <p class="text-neutral-500 text-sm font-normal leading-normal">
-                    Academic project to predict the risk of cardiovascular disease in a patient. Technologies Used:
-                    Python, Numpy, Supervised Learning
-                  </p>
-                </div>
-              </div>
-              <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
-                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
-                  style='background-image: url("assets/asteroid.png");'>
-                </div>
-                <div>
-                  <p class="text-[#141414] text-base font-medium leading-normal">Asteroid Hazard Calculator</p>
-                  <p class="text-neutral-500 text-sm font-normal leading-normal">
-                    Developed a machine learning model to estimate the risk of an Asteroid collision. Technologies Used:
-                    Python, scikit-learn, APIs
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex px-4 py-3 justify-start">
-            <button onclick="window.location.href='projects.html';"
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em]">
-              <span class="truncate">View All Projects</span>
-            </button>
-          </div>
-          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Skills</h2>
-          <div class="flex gap-3 p-3 flex-wrap pr-4">
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Python</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">R</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Machine Learning</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Data Visualization</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Statistical Analysis</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">SQL</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Data Mining</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Angular</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Springboot</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Supervised Learning</p>
-            </div>
-            <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#ededed] pl-4 pr-4">
-              <p class="text-[#141414] text-sm font-medium leading-normal">Data Pipelines</p>
-            </div>
-          </div>
-          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">My Journey
-          </h2>
-          <div class="grid grid-cols-[40px_1fr] gap-x-2 px-4">
-            <div class="flex flex-col items-center gap-1 pt-5">
-              <div class="size-2 rounded-full bg-[#141414]"></div>
-              <div class="w-[1.5px] bg-[#dbdbdb] h-4 grow"></div>
-            </div>
-            <div class="flex flex-1 flex-col py-3">
-              <p class="text-[#141414] text-base font-medium leading-normal">Master's in IT - Data Analytics </p>
-              <p class="text-[#141414] text-base font-medium leading-normal"> University
-                of Technology Sydney (UTS), Sydney || 2024-Present </p>
-              <p class="text-neutral-500 text-base font-normal leading-normal">
-              <p></p>
-              <p> • CGPA (current) - 6.5</p>
-              <p> • Secretary of the UTS Photography Society</p>
-              <p> • Peer Networker - part of the Orientation team at UTS</p>
-              </p>
-            </div>
-            <div class="flex flex-col items-center gap-1">
-              <div class="w-[1.5px] bg-[#dbdbdb] h-4"></div>
-              <div class="size-2 rounded-full bg-[#141414]"></div>
-              <div class="w-[1.5px] bg-[#dbdbdb] h-4 grow"></div>
-            </div>
-            <div class="flex flex-1 flex-col py-3">
-              <p class="text-[#141414] text-base font-medium leading-normal">Project Engineer </p>
-              <p class="text-[#141414] text-base font-medium leading-normal"> Wipro Ltd, Bengaluru,
-                India || 2022-2024 </p>
-              <p class="text-neutral-500 text-base font-normal leading-normal">
-              <p>• Delivered a client project as a full stack developer, modernizing an existing web ERP application
-                used for nationwide production, resulting in enhanced efficiency and streamlined operations.
-              <p> • Migrated backend services to Java and Spring Boot, often developing new API from scratch. </p>
-              <p>• Collaborated with a team of 20 to create user interface using Angular, based on daily requirements of
-                client & legacy application.</p>
-              <p> • Developed and customized API services using Spring Boot to adapt to the evolving requirements of the
-                team.</p>
-              <p>• Successfully deployed newly developed services on AWS servers for further development of mobile
-                applications.</p>
-              </p>
-            </div>
-            <div class="flex flex-col items-center gap-1 pb-3">
-              <div class="w-[1.5px] bg-[#dbdbdb] h-4"></div>
-              <div class="size-2 rounded-full bg-[#141414]"></div>
-            </div>
-            <div class="flex flex-1 flex-col py-3">
-              <p class="text-[#141414] text-base font-medium leading-normal">Bachelor of Technology in Electrical and
-                Electronics Engineering
-              </p>
-              <p class="text-[#141414] text-base font-medium leading-normal">Vellore Institute of Technology (VIT),
-                Chennai, India || 2018-2022 </p>
-              <p class="text-neutral-500 text-base font-normal leading-normal">
-              <p> • CGPA 8.41/10</p>
-              <p> • President of VIT Chennai's Photography Society</p>
-              <p> • Electrical Sensor lead at VIT's Formula Student Racing team</p>
-              <p>• Interned at Centre for Advanced Data Science, VIT Chennai to develop a research paper on Machine
-                Learning.</p>
-              </p>
-            </div>
-          </div>
-          <h2 class="text-[#141414] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact</h2>
-          <div class="flex justify-center">
-            <div class="flex flex-1 gap-3 max-w-[480px] flex-col items-stretch px-4 py-3">
-              <button onclick="window.open('https://github.com/gautumsvp7', '_blank')"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] w-full">
-                <span class="truncate">GitHub Profile</span>
-              </button>
-              <button  onclick="window.open('https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/', '_blank')"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] w-full">
-                <span class="truncate">LinkedIn Profile</span>
-              </button>
-              <button onclick="window.location.href='mailto:gautumsvp@gmail.com'"
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ededed] text-[#141414] text-sm font-bold leading-normal tracking-[0.015em] w-full">
-                <span class="truncate">Email Me</span>
-              </button>
-            </div>
+        <div class="relative">
+          <div class="absolute -left-[35px] top-1.5 w-3.5 h-3.5 rounded-full border border-outline-variant bg-surface"></div>
+          <div class="space-y-1">
+            <span class="font-label-md text-label-md text-outline">Jul 2018 &mdash; Aug 2022</span>
+            <h3 class="font-headline-lg text-xl text-on-surface">B.Tech Electrical &amp; Electronics</h3>
+            <p class="font-body-md text-outline">Vellore Institute of Technology (VIT), Chennai &middot; CGPA 8.41/10</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+    <div class="lg:col-span-7 space-y-8">
+      <div class="space-y-2">
+        <span class="font-section-label text-section-label text-primary uppercase">Trajectory</span>
+        <h2 class="font-headline-lg text-3xl text-on-surface">Work Experience</h2>
+      </div>
+      <div class="grid gap-4">
+        <div class="glass-card p-6 flex flex-col sm:flex-row justify-between items-start gap-3 group">
+          <div class="space-y-2">
+            <h3 class="font-headline-lg text-xl text-on-surface group-hover:text-primary transition-colors">Azentra</h3>
+            <p class="font-label-md text-label-md text-outline">Full-Stack Developer Intern</p>
+            <ul class="font-body-md text-body-md text-on-surface-variant space-y-1 list-disc list-inside">
+              <li>Helped design and build an AI governance platform aligned with the NSW Government AI Assurance Framework, translating regulatory requirements into structured technical workflows.</li>
+              <li>Developed scalable backend services using Node.js and TypeScript, creating RESTful APIs for risk documentation, audit trails, and compliance reporting.</li>
+              <li>Deployed and configured secure Azure-based database infrastructure, ensuring scalable, enterprise-ready data management.</li>
+              <li>Built React-based dashboards that operationalized AI risk classification, accountability mapping, and governance tracking for client use.</li>
+            </ul>
+          </div>
+          <span class="font-label-md text-label-md text-outline bg-surface-container-high px-3 py-1 rounded whitespace-nowrap">Jan &mdash; May 2026</span>
+        </div>
+        <div class="glass-card p-6 flex flex-col sm:flex-row justify-between items-start gap-3 group">
+          <div class="space-y-2">
+            <h3 class="font-headline-lg text-xl text-on-surface group-hover:text-primary transition-colors">Wipro Ltd</h3>
+            <p class="font-label-md text-label-md text-outline">Project Engineer, Full-Stack &amp; Backend Developer</p>
+            <ul class="font-body-md text-body-md text-on-surface-variant space-y-1 list-disc list-inside">
+              <li>Delivered a client project as a full-stack developer, modernizing a nationwide web ERP application, resulting in enhanced efficiency and streamlined operations.</li>
+              <li>Migrated backend services to Java and Spring Boot, often developing new APIs from scratch, under a microservice architecture for easier deployment and maintenance.</li>
+              <li>Collaborated with a team of 20 to build the UI in Angular, based on daily requirements of the client and legacy application.</li>
+              <li>Contributed as backend developer on Wipro's internal augmented reality service platform, developing and customizing Spring Boot API services.</li>
+              <li>Deployed newly developed services on AWS servers for further development of mobile applications.</li>
+              <li>Migrated the backend database from MySQL to PostgreSQL to match evolving team requirements.</li>
+            </ul>
+          </div>
+          <span class="font-label-md text-label-md text-outline bg-surface-container-high px-3 py-1 rounded whitespace-nowrap">May 2022 &mdash; May 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Tech Stack -->
+  <section class="space-y-12">
+    <div class="text-center space-y-2">
+      <span class="font-section-label text-section-label text-primary uppercase">Capabilities</span>
+      <h2 class="font-headline-lg text-4xl text-on-surface">Tech Stack</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="glass-card p-8 space-y-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <span class="material-symbols-outlined text-primary text-3xl">code</span>
+        <h3 class="font-headline-lg text-xl text-on-surface">Languages</h3>
+        <ul class="space-y-3 font-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Python</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> R</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> SQL</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> MATLAB</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> TypeScript</li>
+        </ul>
+      </div>
+      <div class="glass-card p-8 space-y-6">
+        <span class="material-symbols-outlined text-primary text-3xl">query_stats</span>
+        <h3 class="font-headline-lg text-xl text-on-surface">Data Tools</h3>
+        <ul class="space-y-3 font-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Pandas</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> NumPy</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Excel</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Snowflake</li>
+        </ul>
+      </div>
+      <div class="glass-card p-8 space-y-6">
+        <span class="material-symbols-outlined text-primary text-3xl">monitoring</span>
+        <h3 class="font-headline-lg text-xl text-on-surface">Visualization</h3>
+        <ul class="space-y-3 font-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Tableau</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Power BI</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Streamlit</li>
+        </ul>
+      </div>
+      <div class="glass-card p-8 space-y-6">
+        <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+        <h3 class="font-headline-lg text-xl text-on-surface">Machine Learning</h3>
+        <ul class="space-y-3 font-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> scikit-learn</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> PyTorch</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Computer Vision (OpenCV)</li>
+        </ul>
+      </div>
+      <div class="glass-card p-8 space-y-6">
+        <span class="material-symbols-outlined text-primary text-3xl">layers</span>
+        <h3 class="font-headline-lg text-xl text-on-surface">Full-Stack</h3>
+        <ul class="space-y-3 font-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Angular</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Spring Boot</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> React</li>
+        </ul>
+      </div>
+      <div class="glass-card p-8 space-y-6">
+        <span class="material-symbols-outlined text-primary text-3xl">cloud</span>
+        <h3 class="font-headline-lg text-xl text-on-surface">Platforms &amp; Testing</h3>
+        <ul class="space-y-3 font-body-md text-on-surface-variant">
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Django</li>
+          <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Playwright</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Publications -->
+  <section class="space-y-8">
+    <div class="flex items-end justify-between border-b border-outline-variant/30 pb-4">
+      <div class="space-y-1">
+        <span class="font-section-label text-section-label text-primary uppercase">Academic Core</span>
+        <h2 class="font-headline-lg text-3xl text-on-surface">Research &amp; Publications</h2>
+      </div>
+      <a href="newPublications.html" class="hidden md:inline-flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest text-secondary hover:underline">
+        View All <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+    <div class="flex flex-wrap gap-4">
+      <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/9781119847564.ch5" target="_blank" rel="noopener" class="glass-card px-8 py-5 flex items-center gap-4 group cursor-pointer">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-xl">description</span>
+        </div>
+        <div>
+          <p class="font-label-md text-label-md text-secondary tracking-widest uppercase font-bold">Smart Buildings</p>
+          <p class="font-body-md text-outline text-xs">IoT-Integrated Load Management</p>
+        </div>
+      </a>
+      <a href="https://link.springer.com/chapter/10.1007/978-981-19-3015-7_27" target="_blank" rel="noopener" class="glass-card px-8 py-5 flex items-center gap-4 group cursor-pointer">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-xl">shield</span>
+        </div>
+        <div>
+          <p class="font-label-md text-label-md text-secondary tracking-widest uppercase font-bold">Fake News Detection</p>
+          <p class="font-body-md text-outline text-xs">NLP &amp; BERT Neural Architectures</p>
+        </div>
+      </a>
+      <a href="https://link.springer.com/chapter/10.1007/978-981-99-0609-3_5" target="_blank" rel="noopener" class="glass-card px-8 py-5 flex items-center gap-4 group cursor-pointer">
+        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-xl">solar_power</span>
+        </div>
+        <div>
+          <p class="font-label-md text-label-md text-secondary tracking-widest uppercase font-bold">Solar Forecasting</p>
+          <p class="font-body-md text-outline text-xs">Duck Curve Predictive Modeling</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Beyond the Terminal -->
+  <section class="pt-12 border-t border-outline-variant/30 text-center space-y-8">
+    <span class="font-section-label text-section-label text-outline uppercase">Beyond the Terminal</span>
+    <div class="flex flex-wrap justify-center gap-16 opacity-60 hover:opacity-100 transition-opacity">
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-4xl text-on-surface">precision_manufacturing</span>
+        <span class="font-label-md text-label-md tracking-tighter uppercase font-semibold text-on-surface-variant">Electrical &amp; Sensor Engineer, Zuura Formula Racing</span>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-4xl text-on-surface">groups</span>
+        <span class="font-label-md text-label-md tracking-tighter uppercase font-semibold text-on-surface-variant">Peer Networker, UTS</span>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-4xl text-on-surface">camera</span>
+        <span class="font-label-md text-label-md tracking-tighter uppercase font-semibold text-on-surface-variant">Secretary, UTS Photography Society</span>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-4xl text-on-surface">military_tech</span>
+        <span class="font-label-md text-label-md tracking-tighter uppercase font-semibold text-on-surface-variant">UTS SOUL Award, 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="glass-card rounded-2xl p-12 flex flex-col items-center text-center gap-6">
+    <span class="font-section-label text-section-label text-secondary uppercase">Protocol: Contact_Initiation</span>
+    <h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface">Let's <span class="text-secondary">Connect</span></h2>
+    <p class="font-body-md text-on-surface-variant max-w-xl">Feel free to reach out through GitHub, LinkedIn, or email &mdash; I'm always open to collaborating on apps and projects involving data and human health.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://github.com/gautumsvp7" target="_blank" rel="noopener" class="px-6 py-3 rounded-full glass-card font-label-md text-label-md uppercase tracking-widest text-on-surface hover:text-secondary transition-colors">GitHub Profile</a>
+      <a href="https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/" target="_blank" rel="noopener" class="px-6 py-3 rounded-full glass-card font-label-md text-label-md uppercase tracking-widest text-on-surface hover:text-secondary transition-colors">LinkedIn Profile</a>
+      <a href="mailto:gautumsvp@gmail.com" class="px-6 py-3 rounded-full bg-on-surface text-surface font-label-md text-label-md uppercase tracking-widest hover:bg-secondary transition-all active:scale-95">Email Me</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="w-full py-16 bg-surface border-t border-outline-variant/30">
+  <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-stack-unit">
+    <span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface tracking-tighter">Gautum's Portfolio</span>
+    <span class="font-label-md text-label-md uppercase tracking-widest text-outline text-center md:text-left">&copy; 2026 Gautum Vaisiam Parambil. Built with love and creativity.</span>
+    <div class="flex gap-8">
+      <a class="font-label-md text-label-md uppercase tracking-widest text-outline hover:text-secondary hover:-translate-y-[2px] transition-all" href="https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="font-label-md text-label-md uppercase tracking-widest text-outline hover:text-secondary hover:-translate-y-[2px] transition-all" href="https://github.com/gautumsvp7" target="_blank" rel="noopener">GitHub</a>
+      <a class="font-label-md text-label-md uppercase tracking-widest text-outline hover:text-secondary hover:-translate-y-[2px] transition-all" href="mailto:gautumsvp@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/glossy.js"></script>
+</body>
 </html>

@@ -1,217 +1,380 @@
-<html>
-
+<!DOCTYPE html>
+<html class="light" lang="en">
 <head>
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
-    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" />
-
-  <title>Gautum Vaisiam Parambil</title>
-  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Gautum Vaisiam Parambil</title>
+<link rel="stylesheet" href="css/glossy.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&family=Hanken+Grotesk:wght@300;400;500&family=Geist:wght@300;400;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        surface: "#f8f9fa",
+        background: "#f8f9fa",
+        primary: "#00696f",
+        secondary: "#0041c9",
+        "secondary-container": "#00f1fd",
+        "on-surface": "#191c1d",
+        "on-surface-variant": "#3a494b",
+        outline: "#6a7a7b",
+        "outline-variant": "#b9cacb",
+        "surface-container": "#edeeef",
+        "surface-container-high": "#e7e8e9",
+        "surface-container-highest": "#e1e3e4",
+        "surface-container-low": "#f3f4f5",
+        "surface-container-lowest": "#ffffff",
+      },
+      spacing: {
+        "stack-unit": "8px",
+        "container-max": "1280px",
+        "margin-mobile": "24px",
+        "margin-desktop": "80px",
+        gutter: "32px",
+      },
+      fontFamily: {
+        "section-label": ["Geist"],
+        "label-md": ["Geist"],
+        "body-lg": ["Hanken Grotesk"],
+        "body-md": ["Hanken Grotesk"],
+        "headline-lg": ["Sora"],
+        "display-lg": ["Sora"],
+        "headline-lg-mobile": ["Sora"],
+      },
+      fontSize: {
+        "section-label": ["14px", { lineHeight: "20px", letterSpacing: "0.2em", fontWeight: "600" }],
+        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "400" }],
+        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+        "headline-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "display-lg": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "800" }],
+        "headline-lg-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+      },
+    },
+  },
+};
+</script>
 </head>
+<body class="bg-surface selection:bg-secondary/10">
+<div class="noise-overlay"></div>
+<div class="cursor-glow"></div>
 
-<body>
-  <div class="relative flex size-full min-h-screen flex-col bg-neutral-50 group/design-root overflow-x-hidden"
-    style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-    <div class="layout-container flex h-full grow flex-col">
-      <header
-        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#ededed] px-10 py-3">
-        <div class="flex items-center gap-4 text-[#141414]">
-          <div class="size-4">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
-                fill="currentColor"></path>
-            </svg>
-          </div>
-          <h2 class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em]">Gautum's Portfolio</h2>
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_4px_30px_rgba(0,105,111,0.05)]">
+  <div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+    <span class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter text-on-surface">Gautum's Portfolio</span>
+    <div class="hidden md:flex gap-10">
+      <a class="font-label-md text-label-md tracking-widest uppercase text-outline hover:text-on-surface transition-colors" href="index.html">About Me</a>
+      <a class="font-label-md text-label-md tracking-widest uppercase text-secondary relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-secondary after:rounded-full after:shadow-[0_0_8px_rgba(0,65,201,0.4)]" href="projects.html">Projects</a>
+      <a class="font-label-md text-label-md tracking-widest uppercase text-outline hover:text-on-surface transition-colors" href="newPublications.html">Publications</a>
+      <a class="font-label-md text-label-md tracking-widest uppercase text-outline hover:text-on-surface transition-colors" href="newContact.html">Contact</a>
+    </div>
+    <div class="flex gap-2">
+      <a href="https://github.com/gautumsvp7" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 rounded-full glass-card text-on-surface hover:text-secondary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 rounded-full glass-card text-on-surface hover:text-secondary transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256"><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-16">
+
+  <section class="space-y-4">
+    <span class="font-section-label text-section-label text-secondary uppercase tracking-[0.3em]">Portfolio Exhibit</span>
+    <h1 class="font-display-lg text-4xl md:text-display-lg chrome-text tracking-tighter leading-none">Selected Work.</h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Projects that have led me on the journey of seeking answers in data.</p>
+  </section>
+
+  <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+
+    <!-- Crowd Counting via Context-Aware Network (CAN) -->
+    <div class="md:col-span-12 group">
+      <div class="glass-card p-8 md:p-12 rounded-xl flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">PYTORCH</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">CONTEXT-AWARE NETWORK</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">DJANGO / WAGTAIL</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">OPENCV</span>
         </div>
-        <div class="flex flex-1 justify-end gap-8">
-          <div class="flex items-center gap-9">
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="index.html">About Me</a>
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="projects.html">Projects</a>
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="newPublications.html">Publications</a>
-            <a class="text-[#141414] text-sm font-medium leading-normal" href="newContact.html">Contact</a>
+        <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2 block">Team Project (CrowdVision) &middot; Featured in the UTS AI Showcase 2026</span>
+        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">Crowd Counting via Context-Aware Network (CAN)</h3>
+        <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside max-w-4xl">
+          <li>Implemented a Context-Aware Network for crowd density estimation in PyTorch, evaluated on both partitions of the ShanghaiTech benchmark (dense Part A, sparse Part B).</li>
+          <li>Built the full CAN architecture from the 2019 Liu et al. CVPR paper: a VGG16 frontend feeding a multi-scale contextual module (adaptive pooling across four scales with attention-weighted fusion) into a 6-layer dilated convolutional backend producing a density map.</li>
+          <li>Trained with staged fine-tuning &mdash; 20 warm-up epochs with a frozen frontend, then differential learning rates &mdash; combining MSE density loss with a count regularisation term over 300-epoch runs.</li>
+          <li>Achieved MAE 76.15 / RMSE 110.58 on Part A and MAE 10.58 / RMSE 19.67 on Part B, competitive with the original paper's reported results given single-GPU training.</li>
+          <li>Built a Django/Wagtail web app as the project GUI, supporting drag-and-drop image inference and a live OpenCV webcam feed with real-time inference toggling.</li>
+        </ul>
+        <div class="flex flex-wrap gap-12 mb-8">
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Part A MAE / RMSE</span>
+            <span class="font-headline-lg-mobile text-primary">76.15 / 110.58</span>
           </div>
-          <div class="flex gap-2">
-            <button
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e7edf4] text-[#0d151c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-              <a href="https://github.com/gautumsvp7" target="_blank" rel="noopener">
-                <div class="text-[#0d151c]" data-icon="GithubLogo" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                    viewBox="0 0 256 256">
-                    <path
-                      d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z">
-                    </path>
-                  </svg>
-                </div>
-              </a>
-            </button>
-            <button
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#e7edf4] text-[#0d151c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-              <a href="https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/" target="_blank" rel="noopener">
-                <div class="text-[#0d151c]" data-icon="LinkedinLogo" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor"
-                    viewBox="0 0 256 256">
-                    <path
-                      d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z">
-                    </path>
-                  </svg>
-                </div>
-              </a>
-            </button>
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Part B MAE / RMSE</span>
+            <span class="font-headline-lg-mobile text-primary">10.58 / 19.67</span>
+          </div>
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Training Length</span>
+            <span class="font-headline-lg-mobile text-primary">300 Epochs</span>
           </div>
         </div>
-      </header>
-      <div class="px-40 flex flex-1 justify-center py-5">
-        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <div class="flex flex-wrap justify-between gap-3 p-4">
-            <div class="flex min-w-72 flex-col gap-3">
-              <p class="text-[#141414] tracking-light text-[32px] font-bold leading-tight">Projects</p>
-              <p class="text-neutral-500 text-sm font-normal leading-normal">Projects that have lead me on the jounery
-                of seeking answer in data</p>
-            </div>
+        <a href="https://github.com/gautumsvp7/CrowdVision" target="_blank" rel="noopener" class="inline-flex items-center gap-3 font-label-md text-label-md uppercase tracking-widest text-secondary hover:underline w-fit">
+          View Project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Australian Trade Visual Analytics -->
+    <div class="md:col-span-12 group">
+      <div class="glass-card p-8 md:p-12 rounded-xl flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">TABLEAU</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">EXCEL</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">FORECASTING</span>
+        </div>
+        <span class="material-symbols-outlined text-primary text-3xl mb-4">query_stats</span>
+        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">Australian Trade Visual Analytics</h3>
+        <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside max-w-3xl">
+          <li>Conducted a 35-year visual analysis (1988&ndash;2024) of Australia's international trade across 10 categories, engineering raw, statistical, and year-over-year dataset views.</li>
+          <li>Built multi-layered Tableau dashboards (heatmaps, area charts, tree maps) revealing a structural shift in Australia's export economy from agricultural goods to raw commodities, accelerated by the 2008 GFC and 2020 pandemic.</li>
+          <li>Found metalliferous ores accounted for 93.4% of Crude Materials exports in 2021 (peaking at ~$185B); correlated ore exports against steel imports to evidence a structural market decoupling post-2000.</li>
+          <li>Applied Tableau's exponential smoothing forecast model (MAPE 12.8%) to project exports through 2029, cross-validated against AI-generated forecasts.</li>
+        </ul>
+        <div class="flex flex-wrap gap-12 mb-8">
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Coverage</span>
+            <span class="font-headline-lg-mobile text-primary">35 Years</span>
           </div>
-          <div class="p-4 @container">
-            <div
-              class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-neutral-50">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("assets/heart.jpeg");'>
-              </div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4 px-4">
-                <p class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em]">Cardiovascular health risk
-                  prediction</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-neutral-500 text-base font-normal leading-normal">
-                      <!-- Analyzed customer data to identify distinct segments using clustering techniques, enabling targeted marketing strategies. -->
-                    <p>• Developed a machine learning model to predict cardiovascular disease risk using patient data
-                      (blood pressure, cholesterol, glucose, BMI, lifestyle factors).
-                    <p>• Applied preprocessing, feature engineering, and trained multiple classifiers (Random Forest,
-                      KNN, Decision Tree, MLP, Stacking). </p>
-                    <p>• Achieved 73% accuracy and 0.79 AUC-ROC with Random Forest. </p>
-                    <!-- <p>• Used cross-validation and grid search for hyperparameter tuning. </p> -->
-                    <!-- <p>• Generated feature importance insights and deployed the final model for test predictions.</p> -->
-                    </p>
-                    <p class="text-neutral-500 text-base font-normal leading-normal">Technologies: Python, scikit-learn,
-                      pandas, matplotlib, Supervised Learning</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-black text-neutral-50 text-sm font-medium leading-normal">
-                    <a href="https://github.com/gautumsvp7/heart-attack-prediction/blob/main/FinalNotebook.ipynb"
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-black text-neutral-50 text-sm font-medium leading-normal"
-                      target="_blank" rel="noopener">
-                      <span class="truncate">View Project</span> </a>
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Forecast MAPE</span>
+            <span class="font-headline-lg-mobile text-primary">12.8%</span>
           </div>
-
-
-          <div class="p-4 @container">
-            <div
-              class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-neutral-50">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("assets/asteroid.png");'>
-              </div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4 px-4">
-                <p class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em]">Asteroid Hazard Prediction</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-neutral-500 text-base font-normal leading-normal">
-                      <!-- Developed a machine learning model to predict future sales based on historical data and market
-                      trends, improving forecast accuracy. -->
-                      <p>• Built a machine learning pipeline to classify asteroid threats using NASA’s near-Earth object
-                        data (diameter, velocity, distance).
-                    <p>• Performed EDA, feature engineering (risk score), and applied MinMaxScaler and SMOTE to address
-                        class imbalance. </p>
-                    <p>• Trained a logistic regression model with threshold tuning, achieving 0.94 accuracy and 0.96 ROC
-                        AUC </p>
-                    <p>• Evaluated model performance with confusion matrix, classification report, and ROC/PR curves.
-                        Exported the model using joblib and integrated it into a web application with the help of AI
-                        tools (Gemini, Jules).
-
-                    </p>
-                    <p class="text-neutral-500 text-base font-normal leading-normal">Technologies: Python, SMOTE, EDA, Gemini
-                      pandas</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-black text-neutral-50 text-sm font-medium leading-normal">
-                    <a href="https://github.com/gautumsvp7/asteroid"
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-black text-neutral-50 text-sm font-medium leading-normal"
-                      target="_blank" rel="noopener">
-                      <span class="truncate">View Project</span> </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-<!--           
-          <div class="p-4 @container">
-            <div
-              class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-neutral-50">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeAo22SPIpFBclt7YQ4Kj4IpGIFME8LJDupp6VoAE0XOMFQpZndi2qfxdd4x2sfAYkxccV2csVKvre6woUEVwUuFJYXNgRg5z5RgAErKZu7lNab5pgd3gKuW4Ul7r5ylatTYH8ZX76Tqlrq2EMkBMmDlHoNhvcehRg5mU8i0-ol5S0uQHR4UNjxCzycc-C_v483iq73Tkjx_z7Ho-swcpG7T0WxVJ7MXKDEwvcDkmZ3iiznWuTQlQnjuO81tdPUq5QyuK1hDu8oHk");'>
-              </div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4 px-4">
-                <p class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em]">Sentiment Analysis of
-                  Social Media Data</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-neutral-500 text-base font-normal leading-normal">
-                      Performed sentiment analysis on social media posts to gauge public opinion on products and
-                      services, providing insights for brand management.
-                    </p>
-                    <p class="text-neutral-500 text-base font-normal leading-normal">Technologies: Python, NLTK,
-                      TextBlob, pandas</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-black text-neutral-50 text-sm font-medium leading-normal">
-                    <span class="truncate">View Project</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-
-
-          <!-- <div class="p-4 @container">
-            <div
-              class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-neutral-50">
-              <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBWvvm6i4jjLSHIfuvoxNNZDRLNj1T6BnJ7TPll01MRDhJHbSHahnIQjX2NS8M2bM7QmV59Aq5oH3xvh_4zYUXTs8zx1XOAMw8k-VquGDiJAIe3NqmNVdaVwmZsa31dFD7V6wmgESStbUe-xSrZCOHJfYRxpXcvJKoKrTtMSzH6LsWEPsvu1FRt6XDzGC9A4bDqIok7xRxfUgXlqk-JroU8MOXSGgMY_7hebbNN9BL5WN0yMFabtMyN5CYbA3pobN2iq8dA3x_iIvg");'>
-              </div>
-              <div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-4 @xl:px-4 px-4">
-                <p class="text-[#141414] text-lg font-bold leading-tight tracking-[-0.015em]">Healthcare Data Analysis
-                  and Visualization</p>
-                <div class="flex items-end gap-3 justify-between">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-neutral-500 text-base font-normal leading-normal">
-                      Explored healthcare datasets to identify patterns and trends in patient outcomes, visualized
-                      findings to support decision-making.
-                    </p>
-                    <p class="text-neutral-500 text-base font-normal leading-normal">Technologies: R, ggplot2, dplyr,
-                      tidyr</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 bg-black text-neutral-50 text-sm font-medium leading-normal">
-                    <span class="truncate">View Project</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-
-
         </div>
       </div>
     </div>
-  </div>
-</body>
 
+    <!-- Smart Car Insurance Cover Recommender (IAG Hackathon 2026) -->
+    <div class="md:col-span-12 group">
+      <div class="glass-card p-8 md:p-12 rounded-xl flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">REACT 19</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">TYPESCRIPT</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">TAILWIND CSS V4</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">TF-IDF / RAG</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">PLAYWRIGHT</span>
+        </div>
+        <span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2 block">IAG &times; UTS Tech Festival Hackathon &middot; June 2026</span>
+        <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">Smart Car Insurance Cover Recommender</h3>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-3xl">
+          A full-stack React prototype built from zero to demo-ready in 48 hours, guiding first-time car insurance buyers through a personalised, question-by-question recommender that surfaces hidden policy excess costs in plain English and dollars.
+        </p>
+        <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside max-w-3xl">
+          <li>Designed a dual-mode recommendation engine behind a swappable interface: a deterministic decision-tree engine as the guaranteed demo fallback, plus a feature-flagged TF-IDF RAG layer over 16 real PDS clauses producing identical outputs on the demo path.</li>
+          <li>Built a gap-surfacing result page showing per-policy excess costs in real dollars (e.g. Rollin' $2,800 vs. NRMA $2,000), with PDS-evidence blockquotes and a confidence meter.</li>
+          <li>Built a responsible-AI trust layer covering AFCA unlisted-driver disclosure, an interactive alternatives explorer, and a "how it works" accordion that echoes the user's own answers back to them.</li>
+          <li>Coordinated a multi-agent parallel build using Git as the sync layer, with a live task board and handoff scripts so any agent could resume cold with zero context loss across 30 sessions.</li>
+        </ul>
+        <div class="flex flex-wrap gap-12 mb-8">
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Build Window</span>
+            <span class="font-headline-lg-mobile text-primary">48 HRS</span>
+          </div>
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Modules Shipped</span>
+            <span class="font-headline-lg-mobile text-primary">54</span>
+          </div>
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Console Errors</span>
+            <span class="font-headline-lg-mobile text-primary">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cardiovascular Health Risk Prediction -->
+    <div class="md:col-span-12 group">
+      <div class="glass-card p-8 md:p-12 rounded-xl flex flex-col md:flex-row gap-12 items-center">
+        <!-- Thumbnail temporarily disabled
+        <div class="w-full md:w-1/2">
+          <div class="w-full aspect-video rounded-lg overflow-hidden border border-outline-variant/30 bg-cover bg-center" style="background-image: url('assets/heart.jpeg');"></div>
+        </div>
+        -->
+        <div class="w-full flex flex-col h-full">
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">PYTHON</span>
+            <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">SCIKIT-LEARN</span>
+            <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">SUPERVISED LEARNING</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">Cardiovascular Health Risk Prediction</h3>
+          <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside">
+            <li>Developed a machine learning model to predict cardiovascular disease risk using patient data (blood pressure, cholesterol, glucose, BMI, lifestyle factors).</li>
+            <li>Applied preprocessing, feature engineering, and trained multiple classifiers (Random Forest, KNN, Decision Tree, MLP, Stacking).</li>
+            <li>Achieved 73% accuracy and 0.79 AUC-ROC with Random Forest.</li>
+            <li>Used cross-validation and grid search for hyperparameter tuning.</li>
+            <li>Generated feature importance insights and deployed the final model for test predictions.</li>
+          </ul>
+          <div class="flex gap-12 mb-8">
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Accuracy</span>
+              <span class="font-headline-lg-mobile text-primary">73%</span>
+            </div>
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">AUC-ROC</span>
+              <span class="font-headline-lg-mobile text-primary">0.79</span>
+            </div>
+          </div>
+          <a href="https://github.com/gautumsvp7/heart-attack-prediction/blob/main/FinalNotebook.ipynb" target="_blank" rel="noopener" class="mt-auto inline-flex items-center gap-3 font-label-md text-label-md uppercase tracking-widest text-secondary hover:underline w-fit">
+            View Project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asteroid Hazard Prediction -->
+    <div class="md:col-span-12 group">
+      <div class="glass-card p-8 md:p-12 rounded-xl flex flex-col md:flex-row-reverse gap-12 items-center">
+        <!-- Thumbnail temporarily disabled
+        <div class="w-full md:w-1/2">
+          <div class="w-full aspect-video rounded-lg overflow-hidden border border-outline-variant/30 bg-cover bg-center" style="background-image: url('assets/asteroid.png');"></div>
+        </div>
+        -->
+        <div class="w-full flex flex-col h-full">
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">PYTHON</span>
+            <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">SMOTE</span>
+            <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">NASA API</span>
+          </div>
+          <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">Asteroid Hazard Prediction</h3>
+          <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside">
+            <li>Built a machine learning pipeline to classify asteroid threats using NASA's near-Earth object data (diameter, velocity, distance).</li>
+            <li>Performed EDA, feature engineering (risk score), and applied MinMaxScaler and SMOTE to address class imbalance.</li>
+            <li>Trained a logistic regression model with threshold tuning, achieving 0.94 accuracy and 0.96 ROC AUC.</li>
+            <li>Evaluated with confusion matrix, classification report, and ROC/PR curves; exported the model with joblib and integrated it into a web application.</li>
+          </ul>
+          <div class="flex gap-12 mb-8">
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Accuracy</span>
+              <span class="font-headline-lg-mobile text-primary">0.94</span>
+            </div>
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">ROC AUC</span>
+              <span class="font-headline-lg-mobile text-primary">0.96</span>
+            </div>
+          </div>
+          <a href="https://github.com/gautumsvp7/asteroid" target="_blank" rel="noopener" class="mt-auto inline-flex items-center gap-3 font-label-md text-label-md uppercase tracking-widest text-secondary hover:underline w-fit">
+            View Project <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Object Detection & Image Classification -->
+    <div class="md:col-span-6 group">
+      <div class="glass-card h-full p-8 rounded-xl flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">INCEPTIONV3</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">YOLOV5</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">FASTER R-CNN</span>
+        </div>
+        <span class="material-symbols-outlined text-primary text-3xl mb-4">visibility</span>
+        <h3 class="font-headline-lg text-headline-lg-mobile mb-4 text-on-surface group-hover:text-primary transition-colors">Object Detection &amp; Image Classification</h3>
+        <p class="font-body-md text-xs text-outline mb-2">UTS 42028 &mdash; Deep Learning and CNNs</p>
+        <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside">
+          <li>Part A (Dog Breeds, 10 classes): fine-tuned InceptionV3 across three experiments, reaching 96.5% test accuracy with ImageNet pre-trained weights and mixed-precision training.</li>
+          <li>Part B (Aerial Maritime, 5 classes): benchmarked Faster R-CNN (mAP@0.5 0.870) against YOLOv5s (mAP@0.5 0.969, precision 0.981, recall 0.930) &mdash; YOLOv5s won on both accuracy and inference speed.</li>
+          <li>Handled the full pipeline end-to-end: Pascal VOC &harr; YOLO conversion, augmentation, staged fine-tuning, LR scheduling, and reproducible seeding.</li>
+        </ul>
+        <div class="mt-auto space-y-4">
+          <div class="flex gap-8">
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Classification</span>
+              <span class="font-label-md text-primary uppercase">96.5% Accuracy</span>
+            </div>
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Detection</span>
+              <span class="font-label-md text-primary uppercase">0.969 mAP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Facial Expression Recognition -->
+    <div class="md:col-span-6 group">
+      <div class="glass-card h-full p-8 rounded-xl flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">MOBILENETV2</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">CNN</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">HOG + SVM</span>
+        </div>
+        <span class="material-symbols-outlined text-primary text-3xl mb-4">sentiment_satisfied</span>
+        <h3 class="font-headline-lg text-headline-lg-mobile mb-4 text-on-surface group-hover:text-primary transition-colors">Facial Expression Recognition</h3>
+        <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside">
+          <li>Built a multi-model pipeline classifying facial images into 7 emotion categories using the FER2013 dataset (35,887 images).</li>
+          <li>Evaluated three architectures: HOG + SVM baseline, a custom CNN, and MobileNetV2 with two-stage transfer learning.</li>
+          <li>MobileNetV2 performed best (59% test accuracy, macro-F1 0.56); HOG + SVM was competitive at 57.5%, custom CNN reached 52%.</li>
+          <li>Applied CLAHE preprocessing, class-weighted loss, and targeted augmentation to address significant class imbalance.</li>
+        </ul>
+        <div class="mt-auto space-y-4">
+          <div class="flex gap-8">
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Accuracy</span>
+              <span class="font-label-md text-primary uppercase">59%</span>
+            </div>
+            <div>
+              <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Macro-F1</span>
+              <span class="font-label-md text-primary uppercase">0.56</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Analytics Platform -->
+    <div class="md:col-span-6 group">
+      <div class="glass-card h-full p-8 rounded-xl flex flex-col">
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">SNOWFLAKE</span>
+          <span class="font-section-label text-[10px] px-3 py-1 border border-outline-variant/50 rounded-full text-outline">STREAMLIT</span>
+        </div>
+        <span class="material-symbols-outlined text-primary text-3xl mb-4">database</span>
+        <h3 class="font-headline-lg text-headline-lg-mobile mb-4 text-on-surface group-hover:text-primary transition-colors">Payment Analytics Platform</h3>
+        <ul class="font-body-md text-body-md text-on-surface-variant mb-8 space-y-2 list-disc list-inside">
+          <li>Built an end-to-end cloud data warehouse for a fintech payment gateway using the Medallion Architecture (Bronze &rarr; Silver &rarr; Gold) in Snowflake.</li>
+          <li>Engineered ingestion pipelines and robust Silver-layer cleaning (deduplication, standardisation, range/set validation, outlier handling).</li>
+          <li>Modelled a Star Schema for fraud detection, failure analysis, and KPI reporting, with interactive dashboards built in Streamlit via Snowpark.</li>
+        </ul>
+        <div class="mt-auto space-y-4">
+          <div>
+            <span class="font-label-md text-outline uppercase tracking-wider block mb-1">Architecture</span>
+            <span class="font-label-md text-primary uppercase">Medallion &middot; Star Schema</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="w-full py-16 bg-surface border-t border-outline-variant/30">
+  <div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-stack-unit">
+    <span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface tracking-tighter">Gautum's Portfolio</span>
+    <span class="font-label-md text-label-md uppercase tracking-widest text-outline text-center md:text-left">&copy; 2026 Gautum Vaisiam Parambil. Built with love and creativity.</span>
+    <div class="flex gap-8">
+      <a class="font-label-md text-label-md uppercase tracking-widest text-outline hover:text-secondary hover:-translate-y-[2px] transition-all" href="https://www.linkedin.com/in/gautum-subhash-v-p-18b732169/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="font-label-md text-label-md uppercase tracking-widest text-outline hover:text-secondary hover:-translate-y-[2px] transition-all" href="https://github.com/gautumsvp7" target="_blank" rel="noopener">GitHub</a>
+      <a class="font-label-md text-label-md uppercase tracking-widest text-outline hover:text-secondary hover:-translate-y-[2px] transition-all" href="mailto:gautumsvp@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/glossy.js"></script>
+</body>
 </html>
