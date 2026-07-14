@@ -16,18 +16,58 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
+// threshold: 0 fires as soon as any part of a section enters the viewport.
+// A ratio-based threshold (e.g. 0.1) requires 10% of the section's OWN height
+// to be visible, which very tall sections (like the projects grid) can never
+// reach on short mobile viewports, leaving them stuck at opacity:0 forever.
 const glossyRevealObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                glossyRevealObserver.unobserve(entry.target);
             }
         });
     },
-    { threshold: 0.1 }
+    { threshold: 0, rootMargin: '0px 0px -5% 0px' }
 );
 
 document.querySelectorAll('section').forEach((section) => {
     section.classList.add('reveal');
     glossyRevealObserver.observe(section);
 });
+
+// Mobile hamburger menu toggle (shared markup: #mobile-menu-toggle / #mobile-menu)
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuToggle && mobileMenu) {
+    const menuIcon = mobileMenuToggle.querySelector('.material-symbols-outlined');
+
+    const closeMobileMenu = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        if (menuIcon) menuIcon.textContent = 'menu';
+    };
+
+    const openMobileMenu = () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        if (menuIcon) menuIcon.textContent = 'close';
+    };
+
+    mobileMenuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('flex');
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+}
